@@ -21,6 +21,9 @@ public class Listing
    public int compareTo(String targetKey)
    {  return(name.compareTo(targetKey));
    }
+   /*public int getKey(String targetKey)
+   {  return compareTo(targetKey);
+   }*/
    public void setGradePointAverage(String gpa) // coded to demonstrate encapsulation
    {  gradePointAverage = gpa;
    }
