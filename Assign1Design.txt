@@ -1,0 +1,75 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="XEx02Quotation.Default" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Price Quotation</title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;  
+        }
+        .auto-style2 {
+            width: 115px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Price Quotation</h1>
+    <form id="form1" runat="server">
+    <div>
+      <table class="auto-style1">
+        <tr>
+            <td class="auto-style2">Sales Price</td>
+            <td>
+                <asp:TextBox ID="TextBoxSales" runat="server" Font-Bold="True" Width="158px"></asp:TextBox>
+            </td>
+            <td class="auto-style2">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Sales price is required" ControlToValidate="TextBoxSales" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Sales price must be between 10 and 1000" ControlToValidate="TextBoxSales" Display="Dynamic" MaximumValue="1000" MinimumValue="10"></asp:RangeValidator>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style2">&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style2">Discount Percent</td>
+            <td>
+                <asp:TextBox ID="TextBoxDiscount" runat="server" Width="128px"></asp:TextBox>
+            </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Discount percent is required" ControlToValidate="TextBoxDiscount"></asp:RequiredFieldValidator>
+                <asp:RangeValidator ID="RangeValidator2" runat="server" ErrorMessage="Discount percent must be between 10 and 50" ControlToValidate="TextBoxDiscount" MaximumValue="50" MinimumValue="10"></asp:RangeValidator>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style2">Discount Amount</td>
+            <td>
+                <asp:Label ID="LabelDiscount" runat="server" Font-Bold="True"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style2">&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style2">Total Price</td>
+            <td>
+                <asp:Label ID="LabelTotal" runat="server" Font-Bold="True"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style2">&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style2">
+                <asp:Button ID="ButtonCalculate" runat="server" OnClick="ButtonCalculate_Click" Text="Calculate" />
+            </td>
+        </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
