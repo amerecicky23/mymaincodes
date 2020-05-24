@@ -12,6 +12,7 @@ public class CarGame
     private JButton quitB = new JButton("Quit");
     private JTextField speedField1 = new JTextField(5);
     private JTextField speedField2 = new JTextField(5);
+    private JTextField speedField3 = new JTextField(5);
     private JTextField resultArea = new JTextField(15);
 
     public CarGame ()
@@ -25,6 +26,7 @@ public class CarGame
         display1.add(quitB);
         display1.add(speedField1);
         display1.add(speedField2);
+        display1.add(speedField3);
         display1.add(resultArea);
         content.add(display1, BorderLayout.NORTH);
         //enter first car speed
