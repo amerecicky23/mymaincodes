@@ -11,7 +11,7 @@ import java.awt.event.FocusListener;
 
 public class GUICalculator implements WindowListener
 {
-    private JButton addB = new JButton("+");
+         private JButton addB = new JButton("+");
     private JButton subtractB = new JButton("-");
     private JButton multiplyB = new JButton("*");
     private JButton divideB = new JButton("/");
