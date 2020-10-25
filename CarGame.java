@@ -10,9 +10,10 @@ public class CarGame
     int carSpeed2 = 0;
     private JButton enterB = new JButton("Enter top speed");
     private JButton quitB = new JButton("Quit");
+    private JLabel car1Lbl = new JLabel("Car 1");
     private JTextField speedField1 = new JTextField(5);
+    private JLabel car2Lbl = new JLabel("Car 2");
     private JTextField speedField2 = new JTextField(5);
-    private JTextField speedField3 = new JTextField(5);
     private JTextField resultArea = new JTextField(15);
 
     public CarGame ()
@@ -22,13 +23,27 @@ public class CarGame
         Container content = frame.getContentPane();
         //button panel at top
         JPanel display1 = new JPanel();   
+        display1.setLayout(new GridLayout(4,2));//align layout
         display1.add(enterB);
         display1.add(quitB);
+        display1.add(car1Lbl);
         display1.add(speedField1);
+        display1.add(car2Lbl);
         display1.add(speedField2);
-        display1.add(speedField3);
         display1.add(resultArea);
         content.add(display1, BorderLayout.NORTH);
+ 
+        //display2.setLayout(new GridLayout(2, 2));//align layout
+
+        ActionListener quit = new ActionListener() {//close on exit
+            public void actionPerformed(ActionEvent ae)
+            {   
+                System.exit(0);
+            }
+        };
+        quitB.addActionListener(quit);
+
+        frame.setVisible(true);
         //enter first car speed
             
         ActionListener enterTopSpeed = new ActionListener() {
@@ -45,23 +60,8 @@ public class CarGame
                
             }
         };
-        enterB.addActionListener(enterTopSpeed);
+        enterB.addActionListener(enterTopSpeed);  
 
-        ActionListener quit = new ActionListener() {
-            public void actionPerformed(ActionEvent ae)
-            {   
-                System.exit(0);
-            }
-        };
-        quitB.addActionListener(quit);
-
-        frame.setVisible(true);  
-        
-        frame.addWindowListener(new WindowAdapter(){
-            public void windowClosing(WindowEvent we){
-               System.exit(0);
-            }
-         });
     }
     public static void main(String[] args)
     {    
